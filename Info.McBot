@@ -1,0 +1,181 @@
+McBot Info
+
+* Start | Commenting [Check Bottom of file for settings.json code]
+
+—————————————
+Below is a start and end of a set of specific code
+
+//* Start | Name
+<Code>
+//* End | Name
+
+—————————————
+Below a function that has a clear start and end
+
+//! <Function name>
+<Function>
+
+—————————————
+Below is an if statment reason
+
+if(1 === 1) {
+  //| If 1 Equals 1
+} else {
+  //| If 1 Does Not Equal
+}
+
+—————————————
+Below is a todo
+
+//todo Fix This Fucking Error
+
+—————————————
+Below is an inline code describing the line
+
+//? This Is What Happens In This Line
+
+* End | Commenting
+
+
+* Start | Client Functions
+
+—————————————
+Below is for sending a message to a channel
+
+client.functions.sendMessage(Discord, client, message, <content>, [tagUser], [customChannel], [channel])
+
+^Params:
+^ @Discord - Discord.js | Object
+^ @client - Discord.js Client | Object
+^ @message - Message Object | Object
+^ @content - Content To Send | String
+^ @tagUser - Optional - Tag The User When The Message Is Sent | Boolean | Default: false
+^ @customChannel - Optional - Send To A Custom Channel | Boolean | Default: false
+^ @channel - Optional - Discord Channel Object | Object | Default: null
+
+^Returns Message Object | Object
+
+* End | Client Functions
+
+
+* Start | McBot Utils
+
+—————————————
+Below is used for spliting long messages into sendable lengths
+
+client.mcBotUtils.splitText(<message>, char)
+
+^Params:
+^ @message - Content To Split | String
+^ @char - Optional - Location To Split Long Message At. | String | Default: "\n"
+
+^Returns Message | String/Array
+
+—————————————
+Below is used for loading commands and functions at first boot
+
+client.mcBotUtils.loadExternalFiles(Discord, client)
+
+^Params:
+^ @Discord - Discord.js | Object
+^ @client - Discord.js Client | Object
+
+^Returns Nothing | Null
+
+—————————————
+Below is used for setting McBots Activity
+
+client.mcBotUtils.setActivity(client, activityType, activity)
+
+^Params:
+^ @client - Discord.js Client | Object
+^ @activityType - Optional - Type Of Activity [PLAYING, LISTENING, WATCHING] | String | Default: "PLAYING"
+^ @activity - Optional - Title Of Activity | String | Default: "With A Happy Meal"
+
+^Returns Nothing | Null
+
+—————————————
+Below is used for reloading commands and functions
+
+client.mcBotUtils.reloadExternalFiles(Discord, client)
+
+^Params:
+^ @Discord - Discord.js | Object
+^ @client - Discord.js Client | Object
+
+^Returns Nothing | Null
+
+—————————————
+Not Included:
+client.mcBotUtils.dealWithError(err, client)
+
+client.mcBotUtils.makeErrorId()
+
+* End | McBot Utils
+
+
+* Start | How To Make A Command
+
+Please refer to ./examples/command.js
+
+* End | How To Make A Command
+
+
+* Start | How To Make A Function
+
+Please refer to ./examples/function.js
+
+* End | How To Make A Function
+
+
+* Start | Settings.json Better Comments Code
+—————————————
+Below is the code to paste into settings.json [Window Reload Is Required]
+
+"better-comments.tags": [
+        {
+            "tag": "|",
+            "color": "#D8D404",
+            "strikethrough": false,
+            "backgroundColor": "transparent"
+        },
+        {
+          "tag": "!",
+          "color": "#FF2D00",
+          "strikethrough": false,
+          "backgroundColor": "transparent"
+        },
+        {
+          "tag": "?",
+          "color": "#3498DB",
+          "strikethrough": false,
+          "backgroundColor": "transparent"
+        },
+        {
+          "tag": "//",
+          "color": "#474747",
+          "strikethrough": true,
+          "backgroundColor": "transparent"
+        },
+        {
+          "tag": "todo",
+          "color": "#FF8C00",
+          "strikethrough": false,
+          "backgroundColor": "transparent"
+        },
+        {
+          "tag": "*",
+          "color": "#98C379",
+          "strikethrough": false,
+          "backgroundColor": "transparent"
+        },
+        {
+          "tag": "^",
+          "color": "#6B8E23",
+          "strikethrough": false,
+          "backgroundColor": "transparent"
+        }
+      ],
+      "better-comments.highlightPlainText": true,
+
+* End | Settings.json Better Comments Code

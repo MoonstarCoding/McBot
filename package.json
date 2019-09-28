@@ -1,0 +1,22 @@
+{
+  "name": "mcbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "discord.js": "^12.0.0-dev",
+    "node-schedule": "^1.3.2",
+    "sequelize": "^5.10.1",
+    "sqlite3": "^4.0.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
