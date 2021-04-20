@@ -78,9 +78,9 @@ module.exports = {
                 ]);
 
                 client.functions.sendEmbed(Discord, client, message, true, shiftChannel, "Available Shift", `**Information:**\nDate: ${args[2]}\nPosition: ${args[1]}\nStart Time: ${args[3]}\nEnd Time: ${args[4]}\nPosted By: ${message.author.toString()}`).then(sent => {
-                    let fuckingMessageID = sent.id
+                    let fMessageID = sent.id
                     client.database.create({
-                        "messageID": fuckingMessageID,
+                        "messageID": fMessageID,
                         "poster": message.author.id,
                         "position": args[1],
                         "date": args[2],
@@ -254,10 +254,10 @@ module.exports = {
                 claimedChannel.messages.get(postedShiftsRelease.messageID).delete();
 
                 client.functions.sendEmbed(Discord, client, message, true, shiftChannel, "Available Shift", `**Information:**\nDate: ${args[3]}\nPosition: ${args[2]}\nStart Time: ${postedShiftsRelease.startTime}\nEnd Time: ${postedShiftsRelease.endTime}\nPosted By: ${client.users.get(postedShiftsRelease.poster).toString()}`).then(sent => {
-                    let fuckingMessageID = sent.id
+                    let fMessageID = sent.id
                     postedShiftsRelease.update({
                         claimer: null,
-                        messageID: fuckingMessageID
+                        messageID: fMessageID
                     }, {
                         where: {
                             poster: message.mentions.members.first().id,
